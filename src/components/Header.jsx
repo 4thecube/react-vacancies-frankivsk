@@ -1,63 +1,68 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-import "./Header.styles.scss";
+import {HeaderContainerStyles, 
+    HeaderStyles,
+    NavLinkStyles,
+    HeaderHomeStyles,
+    HeaderOptionsStyles
+
+} from './Header.styles';
 
 const Header = () => {
   return (
-    <div className="header-container">
-      <div className="header">
-        <NavLink className="home-link" to="/">
-          <div className="header-home">
+    <HeaderContainerStyles>
+      <HeaderStyles>
+        <NavLinkStyles className="home-link" to="/">
+          <HeaderHomeStyles>
             <FontAwesomeIcon
               icon={faArrowLeft}
               size="2x"
               className="home-arrow"
             />
             <span className="home-text">Home</span>
-          </div>
-        </NavLink>
-        <div className="header-options">
-          <NavLink
+          </HeaderHomeStyles>
+        </NavLinkStyles>
+        <HeaderOptionsStyles>
+          <NavLinkStyles
             className="header-option"
             activeClassName="selected"
             to="/eleks"
           >
             Eleks
-          </NavLink>
-          <NavLink
+          </NavLinkStyles>
+          <NavLinkStyles
             className="header-option"
             activeClassName="selected"
             to="/softjourn"
           >
             SoftJourn
-          </NavLink>
-          <NavLink
+          </NavLinkStyles>
+          <NavLinkStyles
             className="header-option"
             activeClassName="selected"
             to="/softserve"
           >
             SoftServe
-          </NavLink>
-          <NavLink
+          </NavLinkStyles>
+          <NavLinkStyles
             className="header-option"
             activeClassName="selected"
             to="/tenantcloud"
           >
             TenantCloud
-          </NavLink>
-          <NavLink
+          </NavLinkStyles>
+          <NavLinkStyles
             className="header-option"
             activeClassName="selected"
             to="/sombra"
           >
             Sombra
-          </NavLink>
-        </div>
-      </div>
-    </div>
+          </NavLinkStyles>
+        </HeaderOptionsStyles>
+      </HeaderStyles>
+    </HeaderContainerStyles>
   );
 };
 

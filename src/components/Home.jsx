@@ -1,38 +1,45 @@
 import React from "react";
-import {NavLink} from 'react-router-dom';
 import Loader from "./Loader";
 
-const Home = ({counter}) => {
-  return (
-    <div className="home-container">
-      <div className="vacancies-total">
-        All vacancies:
-        {
-          counter === 0 ? 
-          <Loader/>
-          :
-          <span className="vacancies-total-count">{counter}</span>
-        }
+import {
+  HomeStyles,
+  VacanciesTotalStyles,
+  VacanciesTotalCountStyles,
+  NavLinkContainerStyles,
+  NavLinkStyles
+} from "./Home.styles";
 
-      </div>
-      <div className="navlink-container">
-        <NavLink className="navlink eleks-link" to="eleks">
+const Home = ({ counter }) => {
+  return (
+    <HomeStyles>
+      <VacanciesTotalStyles>
+        {counter === 0 ? (
+          <Loader />
+        ) : (
+          <>
+          All vacancies: 
+          <VacanciesTotalCountStyles>{counter}</VacanciesTotalCountStyles>
+        </>
+        )}
+      </VacanciesTotalStyles>
+      <NavLinkContainerStyles>
+        <NavLinkStyles className="eleks-link" to="eleks">
           Eleks
-        </NavLink>
-        <NavLink className="navlink softjourn-link" to="softjourn">
+        </NavLinkStyles>
+        <NavLinkStyles className="softjourn-link" to="softjourn">
           SoftJourn
-        </NavLink>
-        <NavLink className="navlink tenantcloud-link" to="tenantcloud">
+        </NavLinkStyles>
+        <NavLinkStyles className="tenantcloud-link" to="tenantcloud">
           TenantCloud
-        </NavLink>
-        <NavLink className="navlink softserve-link" to="softserve">
+        </NavLinkStyles>
+        <NavLinkStyles className="softserve-link" to="softserve">
           SoftServe
-        </NavLink>
-        <NavLink className="navlink sombra-link" to="sombra">
+        </NavLinkStyles>
+        <NavLinkStyles className="sombra-link" to="sombra">
           Sombra
-        </NavLink>
-      </div>
-    </div>
+        </NavLinkStyles>
+      </NavLinkContainerStyles>
+    </HomeStyles>
   );
 };
 

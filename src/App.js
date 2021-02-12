@@ -3,9 +3,10 @@ import {  Route } from "react-router-dom";
 import extractingDataFromDou from "./extractingDataFromDou";
 
 import "./App.scss";
-import List from "./components/List";
 import Home from './components/Home'
 import Card from './components/Card'
+
+import {AppStyles} from './App.styles';
 
 function App() {
   const [vacanciesList, setVacansiesList] = useState({
@@ -66,9 +67,8 @@ function App() {
     setJoinedVacancies(joiner);
   }, [vacanciesList]);
 
-  // console.log("Divided here: ", vacanciesList);
   return (
-    <div className="App">
+    <AppStyles>
       <Route 
         exact
         path='/'
@@ -99,7 +99,7 @@ function App() {
         path="/sombra"
         render={() => <Card vacancies={joinedVacancies.sombra} />}
       />
-    </div>
+    </AppStyles>
   );
 }
 export default App;

@@ -1,10 +1,12 @@
-.lds-ring {
+import styled from 'styled-components';
+
+export const LoaderRingStyles = styled.div`
     display: inline-block;
     position: relative;
     width: 80px;
     height: 80px;
-  }
-  .lds-ring div {
+    z-index: 6;
+
     box-sizing: border-box;
     display: block;
     position: absolute;
@@ -15,16 +17,17 @@
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: #fff transparent transparent transparent;
-  }
-  .lds-ring div:nth-child(1) {
+  &.lds-ring div:nth-child(1) {
     animation-delay: -0.45s;
   }
-  .lds-ring div:nth-child(2) {
+  &.lds-ring div:nth-child(2) {
     animation-delay: -0.3s;
   }
-  .lds-ring div:nth-child(3) {
+  &.lds-ring div:nth-child(3) {
     animation-delay: -0.15s;
   }
+
+
   @keyframes lds-ring {
     0% {
       transform: rotate(0deg);
@@ -32,5 +35,6 @@
     100% {
       transform: rotate(360deg);
     }
-  }
+}
   
+`;

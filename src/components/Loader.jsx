@@ -1,15 +1,15 @@
 import React from "react";
 
-import './Loader.styles.scss';
+import {LoaderRingStyles} from './Loader.styles';
 
 const Loader = () => {
   return (
-    <div class="lds-ring">
+    <LoaderRingStyles>
       <div></div>
       <div></div>
       <div></div>
       <div></div>
-    </div>
+    </LoaderRingStyles>
   );
 };
 
