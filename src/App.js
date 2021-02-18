@@ -5,67 +5,49 @@ import extractingDataFromDou from "./extractingDataFromDou";
 import "./App.scss";
 import Home from './components/Home'
 import Card from './components/Card'
+import All from './components/All.page'
 
 import {AppStyles} from './App.styles';
 
 function App() {
   const [vacanciesList, setVacansiesList] = useState({
-    Softjourn: [],
-    Tenantcloud: [],
-    Eleks: [],
-    Softserve: [],
-    Sombra: [],
+    softjourn: [],
+    tenantcloud: [],
+    eleks: [],
+    softserve: [],
+    sombra: [],
   });
-  const [joinedVacancies, setJoinedVacancies] = useState(
-    { tenantcloud: [] },
-    { eleks: [] },
-    { softjourn: [] },
-    { softserve: [] },
-    { sombra: [] }
-  );
 
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     const fetcher = async () => {
-      const Softjourn = await extractingDataFromDou("softjourn");
-      const Tenantcloud = await extractingDataFromDou("tenantcloud");
-      const Eleks = await extractingDataFromDou("eleks");
-      const Softserve = await extractingDataFromDou("softserve");
-      const Sombra = await extractingDataFromDou("sombra");
+      const softjourn = await extractingDataFromDou("softjourn");
+      const tenantcloud = await extractingDataFromDou("tenantcloud");
+      const eleks = await extractingDataFromDou("eleks");
+      const softserve = await extractingDataFromDou("softserve");
+      const sombra = await extractingDataFromDou("sombra");
       setVacansiesList((prev) => {
         return {
           ...prev,
-          Eleks,
-          Tenantcloud,
-          Softjourn,
-          Softserve,
-          Sombra,
+          eleks,
+          tenantcloud,
+          softjourn,
+          softserve,
+          sombra,
         };
       });
 
       setCounter(
-        Softjourn.length +
-          Tenantcloud.length +
-          Eleks.length +
-          Softserve.length +
-          Sombra.length
+        softjourn.length +
+          tenantcloud.length +
+          eleks.length +
+          softserve.length +
+          sombra.length
       );
     };
     fetcher();
   }, []);
-
-  useEffect(() => {
-    const joiner = {
-      tenantcloud: [...vacanciesList.Tenantcloud],
-      eleks: [...vacanciesList.Eleks],
-      softserve: [...vacanciesList.Softserve],
-      softjourn: [...vacanciesList.Softjourn],
-      sombra: [...vacanciesList.Sombra],
-    };
-
-    setJoinedVacancies(joiner);
-  }, [vacanciesList]);
 
   return (
     <AppStyles>
@@ -77,27 +59,32 @@ function App() {
       <Route
         exact
         path="/eleks"
-        render={() => <Card vacancies={joinedVacancies.eleks} />}
+        render={() => <Card vacancies={vacanciesList.eleks} />}
       />
       <Route
         exact
         path="/softjourn"
-        render={() => <Card vacancies={joinedVacancies.softjourn} />}
+        render={() => <Card vacancies={vacanciesList.softjourn} />}
       />
       <Route
         exact
         path="/softserve"
-        render={() => <Card vacancies={joinedVacancies.softserve} />}
+        render={() => <Card vacancies={vacanciesList.softserve} />}
       />
       <Route
         exact
         path="/tenantcloud"
-        render={() => <Card vacancies={joinedVacancies.tenantcloud} />}
+        render={() => <Card vacancies={vacanciesList.tenantcloud} />}
       />
       <Route
         exact
         path="/sombra"
-        render={() => <Card vacancies={joinedVacancies.sombra} />}
+        render={() => <Card vacancies={vacanciesList.sombra} />}
+      />
+            <Route
+        exact
+        path="/all"
+        render={() => <All vacancies = {vacanciesList} />}
       />
     </AppStyles>
   );

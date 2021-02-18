@@ -19,6 +19,20 @@
       padding: 1.5rem;
       border-bottom: 1px solid grey;
       background-color: #0d1117;
+
+      .loader{
+        z-index: 13;
+        color: white;
+      }
+
+      .vacancy-link{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+      }
   
       .vacancy-title {
         display: flex;

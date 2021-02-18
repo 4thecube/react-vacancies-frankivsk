@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const HomeStyles = styled.div`
   padding: 3rem;
@@ -16,19 +16,49 @@ export const VacanciesTotalStyles = styled.div`
   color: white;
 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 
   font-size: 1.5em;
   z-index: 5;
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const GoToAllButtonStyles = styled(Link)`
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-size: 2em;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20%;
+  height: 100%;
+
+  border: none;
+  background-color:#2ea043;
+  z-index: 6;
+  margin-top: 0;
+  margin-left: 20px;
+
 `;
 
 export const VacanciesTotalCountStyles = styled.span`
   display: flex;
   padding-top: 10px;
   font-size: 2em;
-  color: #40c463;
+  color: #56d364;
 `;
 
 export const NavLinkContainerStyles = styled.div`

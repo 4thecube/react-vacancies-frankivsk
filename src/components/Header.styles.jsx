@@ -20,6 +20,7 @@ export const HeaderStyles = styled.div`
 `;
 
 export const NavLinkStyles = styled(NavLink)`
+font-family: Roboto,sans-serif;
   &.home-link {
     text-decoration: none;
   }
@@ -59,6 +60,10 @@ export const HeaderHomeStyles = styled.div`
 
   &:hover {
     border-bottom: 3px solid #40c463;
+  }
+
+  .home-text{
+    margin-left: 25px;
   }
 `;
 

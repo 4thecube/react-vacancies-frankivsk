@@ -21,7 +21,7 @@ const Header = () => {
               size="2x"
               className="home-arrow"
             />
-            <span className="home-text">Home</span>
+            <span className="home-text">HOME</span>
           </HeaderHomeStyles>
         </NavLinkStyles>
         <HeaderOptionsStyles>
@@ -30,35 +30,35 @@ const Header = () => {
             activeClassName="selected"
             to="/eleks"
           >
-            Eleks
+            ELEKS
           </NavLinkStyles>
           <NavLinkStyles
             className="header-option"
             activeClassName="selected"
             to="/softjourn"
           >
-            SoftJourn
+            SOFTJOURN
           </NavLinkStyles>
           <NavLinkStyles
             className="header-option"
             activeClassName="selected"
             to="/softserve"
           >
-            SoftServe
+            SOFTSERVE
           </NavLinkStyles>
           <NavLinkStyles
             className="header-option"
             activeClassName="selected"
             to="/tenantcloud"
           >
-            TenantCloud
+            TENANTCLOUD
           </NavLinkStyles>
           <NavLinkStyles
             className="header-option"
             activeClassName="selected"
             to="/sombra"
           >
-            Sombra
+            SOMBRA
           </NavLinkStyles>
         </HeaderOptionsStyles>
       </HeaderStyles>
