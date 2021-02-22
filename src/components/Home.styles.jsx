@@ -16,9 +16,8 @@ export const VacanciesTotalStyles = styled.div`
   color: white;
 
   display: flex;
-  flex-direction: row;
+
   justify-content: space-between;
-  align-items: center;
 
   font-size: 1.5em;
   z-index: 5;
@@ -29,6 +28,23 @@ export const VacanciesTotalStyles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 90vw;
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 70vw;
+    padding: 1rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 50vw;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 70vw;
   }
 `;
 
@@ -47,11 +63,10 @@ export const GoToAllButtonStyles = styled(Link)`
   height: 100%;
 
   border: none;
-  background-color:#2ea043;
+  background-color: #2ea043;
   z-index: 6;
   margin-top: 0;
   margin-left: 20px;
-
 `;
 
 export const VacanciesTotalCountStyles = styled.span`
@@ -69,6 +84,10 @@ export const NavLinkContainerStyles = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
+
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+  }
 `;
 
 export const NavLinkStyles = styled(NavLink)`
@@ -146,6 +165,24 @@ export const NavLinkStyles = styled(NavLink)`
       color: white;
       background: #40c463;
       background-position: bottom left;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &.tenantcloud-link {
+      width: 30vw;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 70vw;
+
+    &.softserve-link {
+      width: 70vw;
+    }
+
+    &.tenantcloud-link {
+      width: 70vw;
     }
   }
 `;

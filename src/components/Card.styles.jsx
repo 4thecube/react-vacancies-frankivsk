@@ -8,6 +8,10 @@ export const CardContainerStyles = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+  }
 `;
 
 export const CardStyles = styled.div`
@@ -27,17 +31,31 @@ export const CardStyles = styled.div`
   background-color: #0d1117;
   box-shadow: 0 6px 19.4px 0.6px black;
 
-  z-index: 3;
-
   &:hover {
     transform: scale(1.05);
     border-left: 5px solid #40c463;
+  }
+
+  @media screen and (max-width: 1300px) {
+    width: 80vw;
+    height: 20vh;
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 75vw;
+    height: 35vh;
+    padding: 0;
+    overflow-y: scroll;
   }
 `;
 
 export const CardTitleStyles = styled.div`
   font-size: 2em;
   color: #40c463;
+  @media screen and (max-width: 420px) {
+    font-size: 1.5em;
+    margin-top: 10vh;
+  }
 `;
 
 export const CardHrefStyles = styled.a`
@@ -49,6 +67,11 @@ export const CardDescriptionStyles = styled.div`
   font-size: 1.1em;
   margin-top: 20px;
   text-align: justify;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1em;
+    padding: 0 15px;
+  }
 `;
 
 export const LoaderContainerStyles = styled.div`
@@ -59,5 +82,12 @@ export const LoaderContainerStyles = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 `;
+
+// export const HeaderContainerForMobileStyles = styled.div`
+// @media screen and (max-width: 1300px) {
+//   .hey{
+//     visibility: hidden;
+//   }
+// }
+//`;

@@ -19,6 +19,11 @@ export const VacanciesCountContainerStyles = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
+    padding: 1.5rem;
+
+    @media screen and (max-width: 1000px) {
+        width: 90vw;
+    }
 `; 
 
 export const VacanciesCountStyles = styled.span`

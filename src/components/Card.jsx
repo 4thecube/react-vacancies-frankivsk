@@ -10,7 +10,7 @@ import {
   CardTitleStyles,
   CardHrefStyles,
   CardDescriptionStyles,
-  LoaderContainerStyles
+  LoaderContainerStyles,
 } from "./Card.styles";
 
 const Card = (props) => {
@@ -25,13 +25,15 @@ const Card = (props) => {
               <CardStyles>
                 <CardHrefStyles href={vacancy.href}>
                   <CardTitleStyles>{vacancy.title}</CardTitleStyles>
-                  <CardDescriptionStyles>{vacancy.description}</CardDescriptionStyles>
+                  <CardDescriptionStyles>
+                    {vacancy.description}
+                  </CardDescriptionStyles>
                 </CardHrefStyles>
               </CardStyles>
             ))
           ) : (
             <LoaderContainerStyles>
-              <Loader/>
+              <Loader />
             </LoaderContainerStyles>
           )
         ) : (

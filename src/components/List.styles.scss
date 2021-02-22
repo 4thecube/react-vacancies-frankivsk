@@ -20,6 +20,13 @@
       border-bottom: 1px solid grey;
       background-color: #0d1117;
 
+      @media screen and (max-width: 950px) {
+        font-size: 1.1em;
+        display: flex;
+        justify-content: space-evenly;
+        width: 90vw;
+      }
+
       .loader{
         z-index: 13;
         color: white;
@@ -39,6 +46,11 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+
+        @media screen and (max-width: 950px) {
+          width: 50vw;
+          margin-left: 50px;
+        }
       }
   
       .vacancy-company {
@@ -47,6 +59,11 @@
         justify-content: center;
         align-items: center;
         width: 15%;
+
+        @media screen and (max-width: 950px) {
+          width: 30vw;
+          margin-left: 50px;
+        }
       }
       .vacancy-description {
         font-size: 0.9em;
@@ -56,6 +73,13 @@
         justify-content: center;
         align-items: center;
         color: #40c463;
+
+
+        @media screen and (max-width: 950px) {
+            width: 0;
+            visibility: hidden;
+            position: absolute;
+        }
       }
     }
   }
