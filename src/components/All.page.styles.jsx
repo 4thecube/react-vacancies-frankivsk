@@ -29,4 +29,5 @@ export const VacanciesCountContainerStyles = styled.div`
 export const VacanciesCountStyles = styled.span`
     font-size: 3em;
     color: green;
+    padding: 2rem;
 `; 

@@ -6,6 +6,5 @@ export const AppStyles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     overflow-x: hidden;
 `;

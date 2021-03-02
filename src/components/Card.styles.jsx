@@ -42,8 +42,8 @@ export const CardStyles = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    width: 75vw;
-    height: 35vh;
+    width: 100vw;
+    min-height: 40vh;
     padding: 0;
     overflow-y: scroll;
   }
@@ -54,7 +54,7 @@ export const CardTitleStyles = styled.div`
   color: #40c463;
   @media screen and (max-width: 420px) {
     font-size: 1.5em;
-    margin-top: 10vh;
+
   }
 `;
 

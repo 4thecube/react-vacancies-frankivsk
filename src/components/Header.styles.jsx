@@ -12,7 +12,7 @@ export const HeaderContainerStyles = styled.div`
 
 export const HeaderStyles = styled.div`
   height: 10vh;
-  width: 80vw;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -20,7 +20,7 @@ export const HeaderStyles = styled.div`
 `;
 
 export const NavLinkStyles = styled(NavLink)`
-font-family: Roboto,sans-serif;
+  font-family: Roboto, sans-serif;
   &.home-link {
     text-decoration: none;
   }
@@ -43,7 +43,7 @@ font-family: Roboto,sans-serif;
     background-color: #40c463;
   }
 
-  &.menu-option{ 
+  &.menu-option {
     width: 20vw;
     height: 10vh;
     text-decoration: none;
@@ -77,7 +77,7 @@ export const HeaderHomeStyles = styled.div`
     border-bottom: 3px solid #40c463;
   }
 
-  .home-text{
+  .home-text {
     margin-left: 25px;
   }
 `;
@@ -94,7 +94,6 @@ export const HeaderOptionsStyles = styled.div`
     width: 0px;
     z-index: -2;
     position: absolute;
-
   }
 `;
 
@@ -107,27 +106,28 @@ export const MobileHeaderStyles = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 20px;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }
 `;
 
 export const Ty = styled.div`
-  position: absolute; 
+  position: absolute;
   top: 10vh;
   background-color: #0d1117;
-  border: 1px solid #40c463; 
+  border: 1px solid #40c463;
   z-index: 3;
   width: 20vw;
 
   @media screen and (max-width: 800px) {
     width: 50vw;
-    left: 40vw;
+    left: 50vw;
     background-color: #40c463;
   }
-`;  
+`;
 
 export const MenuLinkContainer = styled.div`
   z-index: 99;
@@ -138,16 +138,16 @@ export const MenuLinkContainer = styled.div`
   @media screen and (max-width: 800px) {
     width: 50vw;
   }
-`; 
+`;
 
 export const MobileMenuButtonStyles = styled.div`
-  &.hidden-false{
+  &.hidden-false {
     background-color: red;
     width: 100%;
     border: none;
   }
 
-  .hidden-true{
+  .hidden-true {
     background-color: green;
   }
 `;
