@@ -44,7 +44,7 @@ export const NavLinkStyles = styled(NavLink)`
   }
 
   &.menu-option {
-    width: 20vw;
+    width: 25vw;
     height: 10vh;
     text-decoration: none;
     color: white;
@@ -52,6 +52,11 @@ export const NavLinkStyles = styled(NavLink)`
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid #40c463;
+
+    &:hover {
+      background-color: #0d1117;
+      color: #40c463;
+    }
 
     @media screen and (max-width: 800px) {
       width: 50vw;
@@ -61,7 +66,7 @@ export const NavLinkStyles = styled(NavLink)`
 
 export const HeaderHomeStyles = styled.div`
   height: 10vh;
-  width: 8vw;
+  margin-left: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,11 +122,10 @@ export const MobileHeaderStyles = styled.div`
 export const Ty = styled.div`
   position: absolute;
   top: 10vh;
-  background-color: #0d1117;
-  border: 1px solid #40c463;
+  right: 0;
+  background-color: #40c463;
   z-index: 3;
-  width: 20vw;
-
+  width: 25vw;
   @media screen and (max-width: 800px) {
     width: 50vw;
     left: 50vw;
@@ -146,7 +150,6 @@ export const MobileMenuButtonStyles = styled.div`
     width: 100%;
     border: none;
   }
-
   .hidden-true {
     background-color: green;
   }

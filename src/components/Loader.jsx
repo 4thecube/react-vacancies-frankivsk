@@ -1,15 +1,17 @@
 import React from "react";
 
-import {LoaderRingStyles} from './Loader.styles';
+import { LoaderRingStyles, LoaderContainerStyles } from "./Loader.styles";
 
 const Loader = () => {
   return (
-    <LoaderRingStyles>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </LoaderRingStyles>
+    <LoaderContainerStyles>
+      <LoaderRingStyles>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </LoaderRingStyles>
+    </LoaderContainerStyles>
   );
 };
 

@@ -1,17 +1,14 @@
 import styled from 'styled-components';
 
 export const LoaderRingStyles = styled.div`
-    display: inline-block;
-    position: relative;
     width: 80px;
     height: 80px;
     z-index: 6;
-
     box-sizing: border-box;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    width: 64px;
-    height: 64px;
     margin: 8px;
     border: 8px solid #fff;
     border-radius: 50%;
@@ -36,5 +33,13 @@ export const LoaderRingStyles = styled.div`
       transform: rotate(360deg);
     }
 }
-  
 `;
+
+export const LoaderContainerStyles = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`; 

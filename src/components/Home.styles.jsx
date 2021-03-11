@@ -14,11 +14,8 @@ export const VacanciesTotalStyles = styled.div`
   height: 15vh;
   background-color: #0d1117;
   color: white;
-
   display: flex;
-
   justify-content: space-between;
-
   font-size: 1.5em;
   z-index: 5;
 

@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+// #40c463 - green;
+//
+
 export const CardContainerStyles = styled.div`
   width: 80vw;
   margin-top: 50px;
@@ -23,8 +26,6 @@ export const CardStyles = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  overflow-y: scroll;
-  scrollbar-width: thin;
   margin: 10px;
   padding: 2.5rem 3.5rem 2rem;
 
@@ -34,6 +35,8 @@ export const CardStyles = styled.div`
   &:hover {
     transform: scale(1.05);
     border-left: 5px solid #40c463;
+    transition: 0.2s ease-in;
+    
   }
 
   @media screen and (max-width: 1300px) {
@@ -52,6 +55,7 @@ export const CardStyles = styled.div`
 export const CardTitleStyles = styled.div`
   font-size: 2em;
   color: #40c463;
+  font-weight: bolder;
   @media screen and (max-width: 420px) {
     font-size: 1.5em;
 
