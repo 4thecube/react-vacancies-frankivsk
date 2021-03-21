@@ -11,18 +11,19 @@ export const HomeStyles = styled.div`
 
 export const VacanciesTotalStyles = styled.div`
   width: 25vw;
-  height: 15vh;
+  height: 20vh;
   background-color: #0d1117;
   color: white;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   font-size: 1.5em;
   z-index: 5;
 
   .container {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
   }
@@ -45,32 +46,46 @@ export const VacanciesTotalStyles = styled.div`
   }
 `;
 
-export const GoToAllButtonStyles = styled(Link)`
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-  font-size: 2em;
-  font-weight: bold;
+export const GoToAllButtonStyles = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 8vh;
+  z-index: 6;
+  margin-top: 0;
+`;
 
+export const ButtonLinkStyles = styled(Link)`
+  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 30%;
+  height:4vh;
+  background-color: #1096de;
+  color: white;
+  margin: 20px 0 20px 0;
 
-  width: 20%;
-  height: 100%;
-
-  border: none;
-  background-color: #2ea043;
-  z-index: 6;
-  margin-top: 0;
-  margin-left: 20px;
+  &:hover{
+    background-color: white;
+    color: #1096de;
+  }
 `;
 
 export const VacanciesTotalCountStyles = styled.span`
   display: flex;
-  padding-top: 10px;
+  align-items: flex-end;
+  justify-content: center;
+  
   font-size: 2em;
-  color: #56d364;
+  color: #1096de;
+  font-weight: 800;
+  margin-left: 20px;
 `;
 
 export const NavLinkContainerStyles = styled.div`

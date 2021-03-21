@@ -33,14 +33,15 @@ export const NavLinkStyles = styled(NavLink)`
     align-items: center;
     text-decoration: none;
     color: white;
+    border-bottom: 3px solid #0d1117;
 
     &:hover {
-      border-bottom: 3px solid #40c463;
+      border-bottom: 3px solid #1096de;
     }
   }
 
   &.selected {
-    background-color: #40c463;
+    background-color: #1096de;
   }
 
   &.menu-option {
@@ -51,11 +52,11 @@ export const NavLinkStyles = styled(NavLink)`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid #40c463;
+    border-bottom: 2px solid #1096de;
 
     &:hover {
       background-color: #0d1117;
-      color: #40c463;
+      color: #1096de;
     }
 
     @media screen and (max-width: 800px) {
@@ -66,11 +67,12 @@ export const NavLinkStyles = styled(NavLink)`
 
 export const HeaderHomeStyles = styled.div`
   height: 10vh;
+  width: 12vw;
   margin-left: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  border-bottom: 2px solid #0d1117;
   text-decoration: none;
   color: white;
 
@@ -79,11 +81,11 @@ export const HeaderHomeStyles = styled.div`
   }
 
   &:hover {
-    border-bottom: 3px solid #40c463;
+    border-bottom: 3px solid #1096de;
   }
 
   .home-text {
-    margin-left: 25px;
+    margin-left: 10px;
   }
 `;
 
@@ -121,15 +123,15 @@ export const MobileHeaderStyles = styled.div`
 
 export const Ty = styled.div`
   position: absolute;
-  top: 10vh;
+  top: 9vh;
   right: 0;
-  background-color: #40c463;
+  background-color: #1096de;
   z-index: 3;
   width: 25vw;
   @media screen and (max-width: 800px) {
     width: 50vw;
     left: 50vw;
-    background-color: #40c463;
+    background-color: #1096de;
   }
 `;
 

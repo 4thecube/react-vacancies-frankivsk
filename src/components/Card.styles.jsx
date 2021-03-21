@@ -34,7 +34,7 @@ export const CardStyles = styled.div`
 
   &:hover {
     transform: scale(1.05);
-    border-left: 5px solid #40c463;
+    border-left: 5px solid #1096de;
     transition: 0.2s ease-in;
     
   }
@@ -54,7 +54,7 @@ export const CardStyles = styled.div`
 
 export const CardTitleStyles = styled.div`
   font-size: 2em;
-  color: #40c463;
+  color: #1096de;
   font-weight: bolder;
   @media screen and (max-width: 420px) {
     font-size: 1.5em;

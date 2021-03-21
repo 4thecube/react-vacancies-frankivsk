@@ -1,17 +1,26 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  SearchBoxStyles,
+  SearchBoxContainerStyles,
+  SearchIconStyles,
+} from "./Searchbox.styles";
+import SearchGlass from "../assets/search-glass.svg";
 
-import {SearchBoxStyles} from './Searchbox.styles';
-
-const Searchbox = ({handleChange}) => {
+const Searchbox = ({ handleChange }) => {
   return (
-    <div>
+    <SearchBoxContainerStyles>
+      <SearchIconStyles>
+        <FontAwesomeIcon icon={faSearch} size="2x" />
+      </SearchIconStyles>
       <SearchBoxStyles
         className="search"
         type="search"
-        placeholder='Search by title or company name'
+        placeholder="Search by title or company name"
         onChange={handleChange}
       />
-    </div>
+    </SearchBoxContainerStyles>
   );
 };
 

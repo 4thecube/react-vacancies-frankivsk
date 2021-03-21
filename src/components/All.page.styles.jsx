@@ -10,7 +10,7 @@ export const AllPageStyled = styled.div`
 
 export const VacanciesCountContainerStyles = styled.div`
     width: 35vw;
-    height: 20vh;
+    height: 10vh;
     color: white;
     background-color: #0d1117;
     font-size: 1.5em;
@@ -28,6 +28,7 @@ export const VacanciesCountContainerStyles = styled.div`
 
 export const VacanciesCountStyles = styled.span`
     font-size: 3em;
-    color: green;
+    color: #1096de;
     padding: 2rem;
+    font-weight: 600;
 `; 

@@ -8,6 +8,7 @@ import {
   NavLinkContainerStyles,
   NavLinkStyles,
   GoToAllButtonStyles,
+  ButtonLinkStyles
 } from "./Home.styles";
 
 const Home = ({ counter }) => {
@@ -19,10 +20,12 @@ const Home = ({ counter }) => {
         ) : (
           <>
             <div className="container">
-              All vacancies:
+              Total vacancies:
               <VacanciesTotalCountStyles>{counter}</VacanciesTotalCountStyles>
             </div>
-            <GoToAllButtonStyles to="all">&rang; </GoToAllButtonStyles>
+            <GoToAllButtonStyles>
+                <ButtonLinkStyles  to="all">View all</ButtonLinkStyles>
+            </GoToAllButtonStyles>
           </>
         )}
       </VacanciesTotalStyles>
