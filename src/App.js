@@ -3,9 +3,10 @@ import { Route } from "react-router-dom";
 import extractingDataFromDou from "./extractingDataFromDou";
 
 import "./App.scss";
+import InfoBlock from "./components/info-block/InfoBlock";
 
 function App() {
-  const companies = ["softjourn", "tenantcloud", "eleks", "softserve"];
+  const companies = ["softjourn", "tenantcloud", "eleks", "softserve", "epam"];
   const [vacancies, setVacansies] = useState({});
   const allVacanciesAsArray = Object.values(vacancies).flat();
   const vacanciesCount = allVacanciesAsArray.length;
@@ -36,6 +37,12 @@ function App() {
   ff("Senior");
   ff("Middle");
 
-  return <div>Clear Project</div>;
+  return (
+    <div>
+      <InfoBlock role="Senior" vacanciesCount={vacanciesPerRole.Senior} />
+      <InfoBlock role="Middle" vacanciesCount={vacanciesPerRole.Middle} />
+      <InfoBlock role="Junior" vacanciesCount={vacanciesPerRole.Junior} />
+    </div>
+  );
 }
 export default App;
