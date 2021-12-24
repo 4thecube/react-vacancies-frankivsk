@@ -1,92 +1,41 @@
 import React, { useState, useEffect } from "react";
-import {  Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import extractingDataFromDou from "./extractingDataFromDou";
 
 import "./App.scss";
-import Home from './components/Home'
-import Card from './components/Card'
-import All from './components/All.page'
-
-import {AppStyles} from './App.styles';
 
 function App() {
-  const [vacanciesList, setVacansiesList] = useState({
-    softjourn: [],
-    tenantcloud: [],
-    eleks: [],
-    softserve: [],
-    sombra: [],
-  });
-
-  const [counter, setCounter] = useState(0);
+  const companies = ["softjourn", "tenantcloud", "eleks", "softserve"];
+  const [vacancies, setVacansies] = useState({});
+  const allVacanciesAsArray = Object.values(vacancies).flat();
+  const vacanciesCount = allVacanciesAsArray.length;
+  const vacanciesPerRole = {};
 
   useEffect(() => {
-    const fetcher = async () => {
-      const softjourn = await extractingDataFromDou("softjourn");
-      const tenantcloud = await extractingDataFromDou("tenantcloud");
-      const eleks = await extractingDataFromDou("eleks");
-      const softserve = await extractingDataFromDou("softserve");
-      const sombra = await extractingDataFromDou("sombra");
-      setVacansiesList((prev) => {
+    companies.forEach(async (company) => {
+      let res = await extractingDataFromDou(company);
+      setVacansies((prevState) => {
         return {
-          ...prev,
-          eleks,
-          tenantcloud,
-          softjourn,
-          softserve,
-          sombra,
+          ...prevState,
+          [company]: res,
         };
       });
-
-      setCounter(
-        softjourn.length +
-          tenantcloud.length +
-          eleks.length +
-          softserve.length +
-          sombra.length
-      );
-    };
-    fetcher();
+    });
   }, []);
 
-  return (
-    <AppStyles>
-      <Route 
-        exact
-        path='/'
-        render={() =>  <Home counter={counter}/> }
-      />
-      <Route
-        exact
-        path="/eleks"
-        render={() => <Card vacancies={vacanciesList.eleks} />}
-      />
-      <Route
-        exact
-        path="/softjourn"
-        render={() => <Card vacancies={vacanciesList.softjourn} />}
-      />
-      <Route
-        exact
-        path="/softserve"
-        render={() => <Card vacancies={vacanciesList.softserve} />}
-      />
-      <Route
-        exact
-        path="/tenantcloud"
-        render={() => <Card vacancies={vacanciesList.tenantcloud} />}
-      />
-      <Route
-        exact
-        path="/sombra"
-        render={() => <Card vacancies={vacanciesList.sombra} />}
-      />
-            <Route
-        exact
-        path="/all"
-        render={() => <All vacancies = {vacanciesList} />}
-      />
-    </AppStyles>
-  );
+  const ff = (role) => {
+    let countByRole = 0;
+    allVacanciesAsArray.forEach((v) => {
+      if (v.title.includes(role)) {
+        return (vacanciesPerRole[role] = countByRole++ + 1);
+      }
+    });
+  };
+
+  ff("Junior");
+  ff("Senior");
+  ff("Middle");
+
+  return <div>Clear Project</div>;
 }
 export default App;
