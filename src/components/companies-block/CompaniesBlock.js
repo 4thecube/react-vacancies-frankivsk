@@ -15,7 +15,6 @@ export const CompaniesMessage = styled.div`
   margin-left: 25px;
   padding: 10px;
   font-size: 42px;
-  color: black;
   border-left: 5px solid #6453bc;
 `;
 
@@ -39,5 +38,5 @@ export const CompaniesMessageButton = styled.button`
 `;
 
 export const CompaniesBlockContainer = styled.div`
-  background-color: #efefef;
+  background-color: #161b22;
 `;

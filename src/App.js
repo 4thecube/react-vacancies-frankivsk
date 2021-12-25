@@ -5,6 +5,9 @@ import extractingDataFromDou from "./extractingDataFromDou";
 import "./App.scss";
 import InfoBlock from "./components/info-block/InfoBlock.jsx";
 import CompaniesBlock from "./components/companies-block/CompaniesBlock.jsx";
+import Counter from "./components/counter/Counter.jsx";
+import About from "./components/about/About.jsx";
+import VacancyList from "./components/vacancy-list/VacancyList.jsx";
 
 function App() {
   // const companies = ["softjourn", "tenantcloud", "eleks", "softserve", "epam"];
@@ -22,15 +25,15 @@ function App() {
   const vacanciesPerRole = {};
 
   useEffect(() => {
-    companies.forEach(async (company) => {
-      let res = await extractingDataFromDou(company.name);
-      setVacansies((prevState) => {
-        return {
-          ...prevState,
-          [company.name]: res,
-        };
-      });
-    });
+    // companies.forEach(async (company) => {
+    //   let res = await extractingDataFromDou(company.name);
+    //   setVacansies((prevState) => {
+    //     return {
+    //       ...prevState,
+    //       [company.name]: res,
+    //     };
+    //   });
+    // });
   }, []);
 
   const ff = (role) => {
@@ -49,9 +52,11 @@ function App() {
   console.log(vacanciesPerRole);
   return (
     <div>
-      <InfoBlock role="Senior" vacanciesCount={vacanciesPerRole.Senior} />
-      <InfoBlock role="Middle" vacanciesCount={vacanciesPerRole.Middle} />
-      <InfoBlock role="Junior" vacanciesCount={vacanciesPerRole.Junior} />
+      <About />
+      <Counter
+        vacanciesPerRole={vacanciesPerRole}
+        vacanciesCount={vacanciesCount}
+      />
       <CompaniesBlock companies={companies} />
     </div>
   );

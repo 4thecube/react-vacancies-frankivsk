@@ -1,4 +1,5 @@
 import React from "react";
+import CountUp from "react-countup";
 
 import {
   InfoBlockContainer,
@@ -12,7 +13,9 @@ const InfoBlock = ({ role, vacanciesCount }) => {
   return (
     <InfoBlockContainer>
       <VacanciesCountContainer>
-        <VacanciesCount role={role}>{vacanciesCount}</VacanciesCount>
+        <VacanciesCount role={role}>
+          <CountUp start={0} end={16} duration={2}></CountUp>
+        </VacanciesCount>
         <VacanciesText>
           {vacanciesCount === 1 ? "vacancy" : "vacancies"} for
           <VacanciesRole>{role}</VacanciesRole>
