@@ -24,7 +24,7 @@ export const CounterContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 export const CountAllContainer = styled.div`
@@ -39,7 +39,7 @@ export const CountAll = styled.div`
   width: 50%;
   font-size: 550px;
   font-weight: bold;
-  color: #6453bc;
+  color: #00ebaf;
   text-shadow: 10px 10px 0px rgba(0, 0, 0, 0.2);
   animation-name: ${CountColorChange};
   animation-duration: 2.5s;
@@ -64,14 +64,30 @@ export const CounterPerRoles = styled.div`
 
 export const OpenModalWindowButton = styled.button`
   font-size: 30px;
-  height: 90px;
+  height: 80px;
   width: 200px;
+  text-transform: uppercase;
+  color: white;
   margin-left: 30px;
   cursor: pointer;
   border: none;
   outline: none;
-  background-color: #17c583;
+
+  background: #6453bc;
+  // background-color: #17c583;
   &:hover {
     background-color: #0cad70;
   }
+`;
+
+export const VacanciesPerRole = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const VacanciesPerRoleText = styled.div`
+  font-size: 65px;
 `;

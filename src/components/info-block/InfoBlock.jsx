@@ -6,6 +6,7 @@ import {
   VacanciesCountContainer,
   VacanciesCount,
   VacanciesRole,
+  VacanciesRoleText,
   VacanciesText,
 } from "./InfoBlock";
 
@@ -17,8 +18,13 @@ const InfoBlock = ({ role, vacanciesCount }) => {
           <CountUp start={0} end={16} duration={2}></CountUp>
         </VacanciesCount>
         <VacanciesText>
-          {vacanciesCount === 1 ? "vacancy" : "vacancies"} for
-          <VacanciesRole>{role}</VacanciesRole>
+          <VacanciesRole>
+            {role}
+            <VacanciesRoleText>
+              {" "}
+              {vacanciesCount === 1 ? "vacancy" : "vacancies"}
+            </VacanciesRoleText>
+          </VacanciesRole>
         </VacanciesText>
       </VacanciesCountContainer>
     </InfoBlockContainer>

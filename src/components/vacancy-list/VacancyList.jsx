@@ -1,81 +1,53 @@
-import React, { useRef } from "react";
-import { forwardRef } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
-import {
-  toggleWindowExtended,
-  toggleWindowHidden,
-  toggleWindowMinimized,
-} from "../../redux/actions/modalWindow";
+import Vacancy from "../vacancy/Vacancy.jsx";
+import { VacancyListContainer, VacancyOverfowBlocker } from "./VacancyList.js";
 
-import {
-  ModalWindow,
-  ButtonContainer,
-  ModalWindowTitle,
-  ModalWindowHeader,
-  ModalWindowButton,
-} from "./VacancyList.js";
-
-// This will be ModalWindow component
-const VacancyList = forwardRef(
-  (
+const VacancyList = ({ window }) => {
+  const { isHidden, isExtended } = window;
+  const vacancies = [
+    { title: "Senior Angular", description: "bla bla bla" },
     {
-      state,
-      toggleWindowHidden,
-      toggleWindowMinimized,
-      toggleWindowExtended,
-      setRef,
+      title: "Senior React",
+      description:
+        "bl blareac blareact blareact ta blare a blare blareblare blare blare blare blare blarect vblareactblareactblareac tblareactblareact bla",
     },
-    innerRef
-  ) => {
-    const { isHidden, isExtended, isMinimized } = state.window;
-    // this is modal window - opend by button click
-    // looks like Windows OS window
-    // have 3 buttons on top
-
-    let modalWindow = "";
-
-    return (
-      <>
-        {!isHidden ? (
-          <ModalWindow
-            ref={(div) => {
-              setRef(div);
-            }}
-            isExtended={isExtended}
-            isMinimized={isMinimized}
-          >
-            <ModalWindowHeader>
-              <ModalWindowTitle>Vacancies List</ModalWindowTitle>
-              <ButtonContainer>
-                <ModalWindowButton onClick={toggleWindowMinimized}>
-                  &#x02A3C;
-                </ModalWindowButton>
-                <ModalWindowButton onClick={toggleWindowExtended}>
-                  &#x029C9;
-                </ModalWindowButton>
-                <ModalWindowButton onClick={toggleWindowHidden}>
-                  &#x02A2F;
-                </ModalWindowButton>
-              </ButtonContainer>
-            </ModalWindowHeader>
-          </ModalWindow>
-        ) : null}
-      </>
-    );
-  }
-);
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+    { title: "Senior Vue", description: "vue vue vue vue  vuebla bla" },
+  ];
+  return (
+    <VacancyListContainer>
+      <VacancyOverfowBlocker
+        isScrollable={vacancies.lenght > 18}
+        isExtended={isExtended}
+      >
+        {vacancies.map((vacancy) => (
+          <Vacancy vacancy={vacancy} />
+        ))}
+      </VacancyOverfowBlocker>
+    </VacancyListContainer>
+  );
+};
 
 const mapStateToProps = (state) => ({
-  state: state,
+  window: state.window,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  toggleWindowHidden: () => dispatch(toggleWindowHidden()),
-  toggleWindowMinimized: () => dispatch(toggleWindowMinimized()),
-  toggleWindowExtended: () => dispatch(toggleWindowExtended()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps, null, {
-  forwardRef: true,
-})(VacancyList);
+export default connect(mapStateToProps)(VacancyList);

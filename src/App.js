@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import extractingDataFromDou from "./extractingDataFromDou";
-
+import { connect } from "react-redux";
 import "./App.scss";
 import InfoBlock from "./components/info-block/InfoBlock.jsx";
 import CompaniesBlock from "./components/companies-block/CompaniesBlock.jsx";
 import Counter from "./components/counter/Counter.jsx";
 import About from "./components/about/About.jsx";
-import VacancyList from "./components/vacancy-list/VacancyList.jsx";
+import ModalWindow from "./components/modal-window/ModalWindow.jsx";
 
-function App() {
+function App({ window }) {
   // const companies = ["softjourn", "tenantcloud", "eleks", "softserve", "epam"];
   const companies = [
     { name: "softserve", color: "#1f58f2" },
@@ -48,17 +48,27 @@ function App() {
   ff("Junior");
   ff("Senior");
   ff("Middle");
+  ff("Trainee");
 
   console.log(vacanciesPerRole);
   return (
     <div>
-      <About />
-      <Counter
-        vacanciesPerRole={vacanciesPerRole}
-        vacanciesCount={vacanciesCount}
-      />
-      <CompaniesBlock companies={companies} />
+      {!window.isExtended ? (
+        <>
+          <About />
+          <Counter
+            vacanciesPerRole={vacanciesPerRole}
+            vacanciesCount={vacanciesCount}
+          />
+          <CompaniesBlock companies={companies} />
+        </>
+      ) : null}
+      <ModalWindow></ModalWindow>
     </div>
   );
 }
-export default App;
+
+const mapStateToProps = (state) => ({
+  window: state.window,
+});
+export default connect(mapStateToProps)(App);

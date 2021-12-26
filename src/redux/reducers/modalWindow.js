@@ -12,6 +12,8 @@ export const ModalWindowReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isHidden: !state.isHidden,
+        isMinimized: false,
+        isExtended: false,
       };
 
     case ModalWindowTypes.TOGGLE_EXTEND:
